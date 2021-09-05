@@ -80,14 +80,21 @@
       </v-row>
       <v-container>
         <v-row justify="center" align="center">
-          <v-col cols="12" sm="10" md="8">
+          <v-col cols="12" sm="10" md="10">
             <div v-for="(item, i) in items" :key="i" :id="item.key">
               <div class="py-10"></div>
               <h1 class="text-center display-2 font-weight-bold mb-3">
                 {{ item.title }}
               </h1>
               <v-divider class="mb-5" />
-              <nuxt-content :document="content[item.key]" />
+              <nuxt-content
+                v-if="item.content"
+                :document="content[item.content]"
+              />
+              <component
+                v-if="item.component"
+                v-bind:is="item.component"
+              ></component>
             </div>
           </v-col>
         </v-row>
@@ -129,45 +136,53 @@ export default {
           title: 'Introduction',
           navTitle: 'Intro',
           key: 'intro',
+          content: 'intro',
         },
         {
           icon: 'mdi-information',
           title: 'About Cryptopi',
           navTitle: 'About',
           key: 'about',
+          content: 'about',
         },
         {
           icon: 'mdi-brush',
           title: 'Artists Trust',
           key: 'artists-trust',
+          content: 'artists-trust',
         },
         {
           icon: 'mdi-wallet-membership',
           title: 'Member Benefits',
           navTitle: 'Membership',
           key: 'member-benefits',
+          content: 'member-benefits',
         },
         {
           icon: 'mdi-ethereum',
           title: 'Specification',
           navTitle: 'Spec',
           key: 'specification',
+          content: 'specification',
         },
         {
           icon: 'mdi-key',
           title: 'Cryptopi Key Sale',
           navTitle: 'Key Sale',
           key: 'cryptopi-key-sale',
+          content: 'cryptopi-key-sale',
         },
         {
           icon: 'mdi-map',
           title: 'Roadmap',
           key: 'roadmap',
+          component: 'Roadmap',
         },
         {
           icon: 'mdi-account-group',
           title: 'Team',
           key: 'team',
+          content: 'team',
         },
       ],
       title: 'Cryptopi Crew',
