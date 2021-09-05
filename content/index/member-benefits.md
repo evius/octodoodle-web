@@ -1,0 +1,4 @@
+- 500 individual owners will receive one of their purchases as a real-life, artist finished print.
+- Contribute to upcoming collections. You'll get sneak peaks, be able to give ideas and provide feedback on new collections.
+- Suggest and vote for awardees of the artist's trust.
+- You'll get first dibs on any new collections such as the Artists Collaboration collection.
