@@ -53,7 +53,9 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    editor: '~/components/ContentTextEditor.vue',
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -65,13 +67,14 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: '#607d8b',
-          secondary: '#ff9800',
+          primary: '#00BFA5',
+          secondary: '#EF5350', // '#E57373',
           accent: '#009688',
           error: '#ff5722',
           warning: '#ffeb3b',
           info: '#03a9f4',
           success: '#4caf50',
+          background: '#212121',
         },
       },
     },

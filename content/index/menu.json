@@ -1,0 +1,48 @@
+[
+    {
+      "icon":"mdi-comment-text-outline",
+      "title":"Introduction",
+      "navTitle":"Intro",
+      "slug":"intro",
+      "content":"intro"
+    },
+    {
+      "icon":"mdi-information",
+      "title":"About Cryptopi",
+      "navTitle":"About",
+      "slug":"about",
+      "content":"about"
+    },
+    {
+      "icon":"mdi-brush",
+      "title":"Artists Trust",
+      "slug":"artists-trust",
+      "content":"artists-trust"
+    },
+    {
+      "icon":"mdi-wallet-membership",
+      "title":"Member Benefits",
+      "navTitle":"Membership",
+      "slug":"member-benefits",
+      "content":"member-benefits"
+    },
+    {
+      "icon":"mdi-ethereum",
+      "title":"Specification",
+      "navTitle":"Spec",
+      "slug":"specification",
+      "content":"specification"
+    },
+    {
+      "icon":"mdi-map",
+      "title":"Roadmap",
+      "slug":"roadmap",
+      "component":"Roadmap"
+    },
+    {
+      "icon":"mdi-account-group",
+      "title":"Team",
+      "slug":"team",
+      "content":"team"
+    }
+  ]

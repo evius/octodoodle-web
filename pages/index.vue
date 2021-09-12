@@ -1,13 +1,13 @@
 <template>
-  <v-app dark>
+  <v-app dark :style="{ background: $vuetify.theme.themes['dark'].background }">
     <v-navigation-drawer v-model="drawer" app temporary>
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in menu"
           :key="i"
           :href="item.to"
           exact
-          @click="$vuetify.goTo(`#${item.key}`, scrollOptions)"
+          @click="$vuetify.goTo(`#${item.slug}`, scrollOptions)"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -23,31 +23,34 @@
         @click.stop="drawer = !drawer"
         v-show="$vuetify.breakpoint.mobile"
       />
-
+      <v-avatar class="mr-4" size="48">
+        <v-img src="/profile.jpg" />
+      </v-avatar>
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-toolbar-items v-show="!$vuetify.breakpoint.mobile">
         <v-btn
-          v-for="(item, i) in items"
+          v-for="(item, i) in menu"
           :key="i"
           router
-          @click="$vuetify.goTo(`#${item.key}`, scrollOptions)"
+          @click="$vuetify.goTo(`#${item.slug}`, scrollOptions)"
           >{{ item.navTitle ? item.navTitle : item.title }}</v-btn
         >
       </v-toolbar-items>
+      <v-btn color="secondary">Members</v-btn>
     </v-app-bar>
     <v-main>
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-img
             aspect-ratio="1.7778"
-            src="https://picsum.photos/id/11/1920/1080"
+            src="/banner.jpg"
             style="min-height: calc(100vh - 100px)"
           >
             <v-container fill-height>
               <v-row justify="center" align="center">
                 <v-col cols="12" sm="10" md="8">
-                  <h1 class="grey--text text--darken-3 text-center col col-12">
+                  <h1 class="white--text text--darken-3 text-center col col-12">
                     <span class="font-weight-light display-2">
                       Welcome To
                     </span>
@@ -81,7 +84,7 @@
       <v-container>
         <v-row justify="center" align="center">
           <v-col cols="12" sm="10" md="10">
-            <div v-for="(item, i) in items" :key="i" :id="item.key">
+            <div v-for="(item, i) in menu" :key="i" :id="item.slug">
               <div class="py-10"></div>
               <h1 class="text-center display-2 font-weight-bold mb-3">
                 {{ item.title }}
@@ -89,12 +92,9 @@
               <v-divider class="mb-5" />
               <nuxt-content
                 v-if="item.content"
-                :document="content[item.content]"
+                :document="sections[item.content]"
               />
-              <component
-                v-if="item.component"
-                v-bind:is="item.component"
-              ></component>
+              <Roadmap :roadmap="roadmap" v-if="item.component === 'Roadmap'" />
             </div>
           </v-col>
         </v-row>
@@ -121,70 +121,20 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const content = await $content('index').fetch();
+    const sections = await $content('index/sections').fetch();
+    const menu = await $content('index/menu').fetch();
+    const roadmap = await $content('index/roadmap').fetch();
+
     return {
-      content: Object.assign({}, ...content.map((x) => ({ [x.slug]: x }))),
+      menu,
+      roadmap,
+      sections: Object.assign({}, ...sections.map((x) => ({ [x.slug]: x }))),
     };
   },
   data() {
     return {
       drawer: false,
       isMobile: this.$vuetify.breakpoint.mdAndDown,
-      items: [
-        {
-          icon: 'mdi-comment-text-outline',
-          title: 'Introduction',
-          navTitle: 'Intro',
-          key: 'intro',
-          content: 'intro',
-        },
-        {
-          icon: 'mdi-information',
-          title: 'About Cryptopi',
-          navTitle: 'About',
-          key: 'about',
-          content: 'about',
-        },
-        {
-          icon: 'mdi-brush',
-          title: 'Artists Trust',
-          key: 'artists-trust',
-          content: 'artists-trust',
-        },
-        {
-          icon: 'mdi-wallet-membership',
-          title: 'Member Benefits',
-          navTitle: 'Membership',
-          key: 'member-benefits',
-          content: 'member-benefits',
-        },
-        {
-          icon: 'mdi-ethereum',
-          title: 'Specification',
-          navTitle: 'Spec',
-          key: 'specification',
-          content: 'specification',
-        },
-        {
-          icon: 'mdi-key',
-          title: 'Cryptopi Key Sale',
-          navTitle: 'Key Sale',
-          key: 'cryptopi-key-sale',
-          content: 'cryptopi-key-sale',
-        },
-        {
-          icon: 'mdi-map',
-          title: 'Roadmap',
-          key: 'roadmap',
-          component: 'Roadmap',
-        },
-        {
-          icon: 'mdi-account-group',
-          title: 'Team',
-          key: 'team',
-          content: 'team',
-        },
-      ],
       title: 'Cryptopi Crew',
     };
   },
