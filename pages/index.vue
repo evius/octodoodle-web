@@ -37,7 +37,6 @@
           >{{ item.navTitle ? item.navTitle : item.title }}</v-btn
         >
       </v-toolbar-items>
-      <v-btn color="secondary">Members</v-btn>
     </v-app-bar>
     <v-main>
       <v-row justify="center" align="center">
