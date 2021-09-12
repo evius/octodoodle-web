@@ -74,7 +74,7 @@ export default {
           warning: '#ffeb3b',
           info: '#03a9f4',
           success: '#4caf50',
-          background: '#212121',
+          background: '#424242',
         },
       },
     },

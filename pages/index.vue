@@ -103,15 +103,19 @@
     <v-footer :absolute="false" app>
       <span>Made with ❤️ by the Cryptopi Crew Team</span>
       <v-spacer />
-      <v-btn icon>
+      <v-btn icon href="https://twitter.com/CryptopiCrew" target="_blank">
         <v-icon>mdi-twitter</v-icon>
       </v-btn>
 
-      <v-btn icon>
+      <v-btn
+        icon
+        href="https://www.instagram.com/cryptopicrew/"
+        target="_blank"
+      >
         <v-icon>mdi-instagram</v-icon>
       </v-btn>
 
-      <v-btn icon>
+      <v-btn icon href="http://discord.gg/mW6pNkR4zs" target="_blank">
         <v-icon>mdi-discord</v-icon>
       </v-btn>
     </v-footer>
