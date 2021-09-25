@@ -6,11 +6,12 @@ There’s not a whole lot you can do with a piece of digital art unfortunately. 
 
 With this in mind, our aim is to distill a part of the NFT collectable world by focusing on these things.
 
-Create and share something of beauty.
-Provide you with a great piece of investment art.
-Be pragmatic about digital art by focusing on artistic avatars (for now at least)
-Connect the wider art community with the NFT collectable art community and investment art.
+- Create and share something of beauty.
+- Provide you with a great piece of investment art.
+- Be pragmatic about digital art by focusing on artistic avatars (for now at least)
+- Connect the wider art community with the NFT collectable art community and investment art.
+<br>
 
 If all this sounds a little too serious, the art itself can be very playful, and that’s what we hope to bring you.
 
-Cryptopi Crew will be part of multiple unique and innovative collections. We're striving to create a brand that you will love and trust. Each new collection drive the floor price of all our collectables.
+Cryptopi Crew will be part of multiple unique and innovative collections. We're striving to create a brand that you will love and trust. Each new collection will drive the floor price of all our collectables.

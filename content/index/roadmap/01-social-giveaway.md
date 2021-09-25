@@ -1,6 +1,6 @@
 ---
 title: Social Media Giveaway
-color: teal lighten-4
+color: cyan lighten-3
 rank: 1
 ---
 

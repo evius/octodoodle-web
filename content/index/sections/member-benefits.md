@@ -1,4 +1,6 @@
-- 500 individual owners will receive one of their purchases as a real-life, artist finished print.
+- 250 individual owners will receive one of their purchases as a real-life, artist finished print.
 - Contribute to upcoming collections. You'll get sneak peaks, be able to give ideas and provide feedback on new collections.
 - Suggest and vote for awardees of the artist's trust.
+- 500 Cryptopi have a friend. Owners of these Cryptopi will receive an NFT from our next collection. Can you guess who it is and what the collection will be?
 - You'll get first dibs on any new collections such as the Artists Collaboration collection.
+- If Cryptopi are successful, we'll be starting a curated, digital art gallery where we'll be promoting and working with other artists. Our members will receive 5% (overall) of profits as part of a decentralized autonomous organization (DAO).

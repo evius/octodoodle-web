@@ -1,5 +1,9 @@
+<cryptopi-gif></cryptopi-gif>
+
+<br>
+
 Who doesn’t love an octopus? They have an incredible neural network in their eight arms, are really smart, can camouflage to multiple environments and squeeze through really tight spaces. Now they’re taking over everything…
 
-Cryptopi will be offered in several individual collections. This will be done to create a variety of different styles that will appeal to different tastes and accessibility. Some styles and collections are more difficult to create and, staying true to the NFT collectable world, we've opted to create each in its own collection with limited supply, rather than reserving part of a single collection for different styles. This ensures fairness for the initial buyers of the collectables, which will be randomly generated with varying tiers of rareness, but also allows us to have some artistic freedom.
+Cryptopi are a collection of 9001 unique artworks randomly generated from over 200 hand drawn traits. Some are cute, some aren't.
 
-As an example, on the successful completion of the first sale, we'd like to bring you an "artist's collaboration" collection which will consist of brand new assets designed and worked on with emerging, upcoming and established, artists. This collection will be offered at a lower supply (around 2000) and at a slightly higher price.
+There's no fantastic back story. We just want to bring you something that you will love and enjoy and one of many more great collections.

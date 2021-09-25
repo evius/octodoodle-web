@@ -1,6 +1,6 @@
 ---
 title: Artist Trust Opens
-color: teal darken-4
+color: teal lighten-1
 rank: 5
 ---
 

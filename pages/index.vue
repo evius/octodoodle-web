@@ -24,7 +24,7 @@
         v-show="$vuetify.breakpoint.mobile"
       />
       <v-avatar class="mr-4" size="48">
-        <v-img src="/profile.jpg" />
+        <v-img src="/images/profile.jpg" />
       </v-avatar>
       <v-toolbar-title v-text="title" />
       <v-spacer />
@@ -43,27 +43,24 @@
         <v-col cols="12">
           <v-img
             aspect-ratio="1.7778"
-            src="/banner.jpg"
+            src="/images/banner.jpg"
             style="min-height: calc(100vh - 100px)"
           >
             <v-container fill-height>
               <v-row justify="center" align="center">
-                <v-col cols="12" sm="10" md="8">
-                  <h1 class="white--text text--darken-3 text-center col col-12">
-                    <span class="font-weight-light display-2">
-                      Welcome To
-                    </span>
-                    <br />
-                    <span class="font-weight-black display-4">
-                      Cryptopi Crew
-                    </span>
-                  </h1>
-                </v-col>
+                <v-col cols="12" sm="10" md="8"> </v-col>
               </v-row>
               <v-row justify="center" align="center">
-                <v-col cols="12" justify="center" align="center">
+                <h1 class="text-center col col-12">
+                  <span
+                    class="grey--text text--darken-3 font-weight-bold display-4"
+                  >
+                    Welcome
+                  </span>
+                </h1>
+                <!-- <v-col cols="12" justify="center" align="center">
                   <v-btn large color="primary">Buy CryptoPi</v-btn>
-                </v-col>
+                </v-col> -->
                 <v-col cols="12" justify="center" align="center">
                   <v-btn
                     fab
@@ -85,7 +82,15 @@
           <v-col cols="12" sm="10" md="10">
             <div v-for="(item, i) in menu" :key="i" :id="item.slug">
               <div class="py-10"></div>
-              <h1 class="text-center display-2 font-weight-bold mb-3">
+              <h1
+                class="
+                  secondary--text
+                  text-center
+                  display-2
+                  font-weight-bold
+                  mb-3
+                "
+              >
                 {{ item.title }}
               </h1>
               <v-divider class="mb-5" />
@@ -94,6 +99,7 @@
                 :document="sections[item.content]"
               />
               <Roadmap :roadmap="roadmap" v-if="item.component === 'Roadmap'" />
+              <Team :members="team" v-if="item.component === 'Team'" />
             </div>
           </v-col>
         </v-row>
@@ -122,15 +128,26 @@
 </template>
 
 <script>
+const sortRoadMap = (a, b) => {
+  if (a.rank > b.rank) {
+    return 1;
+  }
+  if (a.rank < b.rank) {
+    return -1;
+  }
+  return 0;
+};
 export default {
   async asyncData({ $content }) {
     const sections = await $content('index/sections').fetch();
     const menu = await $content('index/menu').fetch();
-    const roadmap = await $content('index/roadmap').fetch();
+    const roadmap = (await $content('index/roadmap').fetch()).sort(sortRoadMap);
+    const team = await $content('index/team').fetch();
 
     return {
       menu,
       roadmap,
+      team,
       sections: Object.assign({}, ...sections.map((x) => ({ [x.slug]: x }))),
     };
   },

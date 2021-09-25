@@ -1,7 +1,7 @@
 ---
 title: Initial sale launch
-color: teal lighten-3
+color: cyan lighten-2
 rank: 2
 ---
 
-This is the pre-sale or initial launch.
+We're just doing a single sale (no pre-sale).

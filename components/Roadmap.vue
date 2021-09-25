@@ -16,7 +16,7 @@
             {{ item.title }}
           </h2>
         </v-card-title>
-        <v-card-text class="pa-0 text--primary">
+        <v-card-text class="pa-0 text-subtitle-1 text--primary">
           <v-sheet class="pa-3">
             <nuxt-content :document="item" />
           </v-sheet>

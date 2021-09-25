@@ -43,6 +43,6 @@
       "icon":"mdi-account-group",
       "title":"Team",
       "slug":"team",
-      "content":"team"
+      "component":"Team"
     }
   ]

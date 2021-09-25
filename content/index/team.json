@@ -1,0 +1,17 @@
+[
+  {
+    "image": "/images/squidy.jpg",
+    "slug": "Squiddy",
+    "description": "The 6-year-old mastermind behind the Cryptopi."
+  },
+  {
+    "image": "/images/octopussy.jpg",
+    "slug": "Octopussy",
+    "description": "The artist and the flare."
+  },
+  {
+    "image": "/images/kraken.jpg",
+    "slug": "Kraken",
+    "description": "The muscle and the heavy lifter."
+  }
+]
