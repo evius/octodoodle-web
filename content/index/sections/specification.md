@@ -12,3 +12,7 @@ Cryptopi have 9 traits and an asset for each trait will be randomly selected. So
 - Tier 0 - 69% probability.
 - Tier 1 - 20% probability.
 - Tier 2 - 1% probability.
+
+<br>
+
+More details coming soon...
