@@ -1,7 +1,7 @@
 ---
 title: Merchandise Drop
-color: cyan lighten-1
-rank: 3
+color: cyan darken-2
+rank: 5
 ---
 
 Subject to initial sale going well.

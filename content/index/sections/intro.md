@@ -1,11 +1,10 @@
-Investment art is a strange and fascinating world where you get to make money while enjoying the finer things in life. Investment art has been around for a long time and seems to have found a place in the cutting edge of technological advancement. Blockchain technology.
+Investment art is a strange and fascinating world where you get to make money while enjoying the finer things in life. Investment art has been around for a long time and seems to have found a place on the cutting edge of technological advancement. Blockchain technology.
 
-The NFT collectable space is crowded and confusing (or easily misunderstood). There are no clear rules on what you can and can’t do and there are, oh, so many things to do. The parallels to the investment art world are clear, however, albeit in a slightly different dress.
+The NFT collectable space is crowded and confusing (or easily misunderstood). There are no clear rules on what you can and can’t do (and there are so many things to do). The parallels to the investment art world are clear, however, albeit in a slightly different dress.
 
-There’s not a whole lot you can do with a piece of digital art unfortunately. Your avatar or profile picture is one of the few places where you can express your taste and show off.
+There’s not a whole lot you can do with a piece of digital art, unfortunately. Your avatar or profile picture is one of the few places where you can express your taste and show off.
 
-With this in mind, our aim is to distill a part of the NFT collectable world by focusing on these things.
-
+With this in mind, we aim to distil a part of the NFT collectable world by focusing on these things.
 - Create and share something of beauty.
 - Provide you with a great piece of investment art.
 - Be pragmatic about digital art by focusing on artistic avatars (for now at least)

@@ -4,4 +4,4 @@ color: cyan darken-1
 rank: 4
 ---
 
-3 Cryptopi will be given away when we reach 4000 followers on Twitter and Discord combined.
+9 (3 x 3) Cryptopi will be given away when we reach 1500, 2000 and 2500 followers on Twitter and Discord combined.

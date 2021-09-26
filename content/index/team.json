@@ -1,17 +1,26 @@
 [
   {
-    "image": "/images/squidy.jpg",
+    "image": "/images/Squiddy.jpg",
     "slug": "Squiddy",
-    "description": "The 6-year-old mastermind behind the Cryptopi."
+    "role": "The mastermind behind the Cryptopi.",
+    "description": ""
   },
   {
-    "image": "/images/octopussy.jpg",
+    "image": "/images/Octopussy.jpg",
     "slug": "Octopussy",
-    "description": "The artist and the flare."
+    "role": "The artist and the flare.",
+    "description": ""
   },
   {
-    "image": "/images/kraken.jpg",
-    "slug": "Kraken",
-    "description": "The muscle and the heavy lifter."
+    "image": "/images/The Kraken.jpg",
+    "slug": "The Kraken",
+    "role": "Engineering and pack mule.",
+    "description": ""
+  },
+  {
+    "image": "/images/Inkling.jpg",
+    "slug": "Inkling",
+    "role": "Marketing and barista.",
+    "description": ""
   }
 ]

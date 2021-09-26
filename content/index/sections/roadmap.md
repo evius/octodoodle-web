@@ -1,5 +1,1 @@
-- Social Media Giveaway: 3 Cryptopi will be given away when we reach 500 followers on Twitter and Discord combined. Cryptopi received when the sale starts.
-- Initial sale launch
-- Merchandise Drop: Subject to initial sale going well.
-- Social Media Giveaway: 3 Cryptopi will be given away when we reach 4000 followers on Twitter and Discord combined.
-- Artists Collaboration AirDrop: 10 Cryptopi designed with other artists.
+Our roadmap is not based on the completion of the sale as it could sell out within hours. After a successful sale, we will begin working on each of the items in the roadmap. They will be completed in the order of priority as listed in the roadmap.

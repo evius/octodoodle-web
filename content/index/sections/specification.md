@@ -1,6 +1,6 @@
 - Initial Price: 0.07 ETH
 - Total Count: 9001
-- Reserved for give aways: 30
+- Reserved for give aways: 27
 - Reserved for Team: 10
 
 <br>

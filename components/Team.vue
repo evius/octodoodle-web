@@ -6,7 +6,9 @@
 
         <v-card-title> {{ member.slug }} </v-card-title>
 
-        <v-card-subtitle> {{ member.description }} </v-card-subtitle>
+        <v-card-subtitle> {{ member.role }} </v-card-subtitle>
+
+        <v-card-text> {{ member.description }} </v-card-text>
       </v-card>
     </v-col>
   </v-row>
