@@ -9,7 +9,17 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Who doesn't love an Octopus? Join the crew! An NFT collection 9001 Cryptopi on the Ethereum blockchain.",
+      },
+      {
+        name: 'keywords',
+        content:
+          'nft nftart art ethereum digitalart cryptoart nftcollector crypto nftcommunity nftartists blockchain openseanft nftdrop cryptoinvester cryptoworld collectibles cryptocurrency nftcollection artwork octopus digital artist nfts digital art erc721 crypto investment art nftartgallery raredigitalart opensea eth',
+      },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'msapplication-TileColor', content: '#da532c' },
       { name: 'theme-color', content: '#ffffff' },
