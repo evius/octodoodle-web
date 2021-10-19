@@ -1,24 +1,24 @@
 [
   {
-    "image": "/images/Squiddy.jpg",
-    "slug": "Squiddy",
+    "image": "/images/Squidy.jpg",
+    "slug": "Squidy",
     "role": "The mastermind behind the Cryptopi.",
     "likes": "Cake for breakfast",
     "dislikes": "Feeling hungry"
   },
   {
-    "image": "/images/Octopussy.jpg",
-    "slug": "Octopussy",
+    "image": "/images/Fandango.jpg",
+    "slug": "Fandango",
     "role": "The artist and the flare.",
     "likes": "Long hot baths",
     "dislikes": "Dull pencils"
   },
   {
-    "image": "/images/The Kraken.jpg",
+    "image": "/images/The_Kraken.jpg",
     "slug": "The Kraken",
     "role": "Engineering and pack mule.",
-    "likes": "Calamari",
-    "dislikes": "PHP"
+    "likes": "Calamari and Bots",
+    "dislikes": "Bots"
   },
   {
     "image": "/images/Inkling.jpg",

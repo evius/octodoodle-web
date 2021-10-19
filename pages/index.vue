@@ -1,5 +1,5 @@
 <template>
-  <v-app dark :style="{ background: $vuetify.theme.themes['dark'].background }">
+  <v-app>
     <v-navigation-drawer v-model="drawer" app temporary>
       <v-list>
         <v-list-item
@@ -23,90 +23,9 @@
         @click.stop="drawer = !drawer"
         v-show="$vuetify.breakpoint.mobile"
       />
-      <v-avatar class="mr-4" size="48">
-        <v-img src="/images/profile.jpg" />
-      </v-avatar>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-toolbar-items v-show="!$vuetify.breakpoint.mobile">
-        <v-btn
-          v-for="(item, i) in menu"
-          :key="i"
-          router
-          @click="$vuetify.goTo(`#${item.slug}`, scrollOptions)"
-          >{{ item.navTitle ? item.navTitle : item.title }}</v-btn
-        >
-      </v-toolbar-items>
-    </v-app-bar>
-    <v-main>
-      <v-row justify="center" align="center">
-        <v-col cols="12">
-          <v-img
-            aspect-ratio="1.7778"
-            src="/images/banner.jpg"
-            style="min-height: calc(100vh - 100px)"
-          >
-            <v-container fill-height>
-              <v-row justify="center" align="center">
-                <v-col cols="12" sm="10" md="8"> </v-col>
-              </v-row>
-              <v-row justify="center" align="center">
-                <h1 class="text-center col col-12">
-                  <span
-                    class="grey--text text--darken-3 font-weight-bold display-4"
-                  >
-                    Welcome
-                  </span>
-                </h1>
-                <!-- <v-col cols="12" justify="center" align="center">
-                  <v-btn large color="primary">Buy CryptoPi</v-btn>
-                </v-col> -->
-                <v-col cols="12" justify="center" align="center">
-                  <v-btn
-                    fab
-                    outlined
-                    rounded
-                    class="align-self-end"
-                    @click="$vuetify.goTo(`#about`, scrollOptions)"
-                  >
-                    <v-icon>mdi-chevron-double-down</v-icon>
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-img>
-        </v-col>
-      </v-row>
-      <v-container>
-        <v-row justify="center" align="center">
-          <v-col cols="12" sm="10" md="10">
-            <div v-for="(item, i) in menu" :key="i" :id="item.slug">
-              <div class="py-10"></div>
-              <h1
-                class="
-                  secondary--text
-                  text-center
-                  display-2
-                  font-weight-bold
-                  mb-3
-                "
-              >
-                {{ item.title }}
-              </h1>
-              <v-divider class="mb-5" />
-              <nuxt-content
-                v-if="item.content"
-                :document="sections[item.content]"
-              />
-              <Roadmap :roadmap="roadmap" v-if="item.component === 'Roadmap'" />
-              <Team :members="team" v-if="item.component === 'Team'" />
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-    <v-footer :absolute="false" app>
-      <span>Made with ❤️ by the Cryptopi Crew Team</span>
+      <v-toolbar-title>
+        <v-img src="/images/logo.png" height="50" max-width="210" />
+      </v-toolbar-title>
       <v-spacer />
       <v-btn icon href="https://twitter.com/CryptopiCrew" target="_blank">
         <v-icon>mdi-twitter</v-icon>
@@ -123,6 +42,152 @@
       <v-btn icon href="http://discord.gg/mW6pNkR4zs" target="_blank">
         <v-icon>mdi-discord</v-icon>
       </v-btn>
+      <template v-slot:extension>
+        <v-tabs align-with-title>
+          <v-tab
+            v-for="(item, i) in menu"
+            :key="i"
+            router
+            @click="$vuetify.goTo(`#${item.slug}`, scrollOptions)"
+            >{{ item.navTitle ? item.navTitle : item.title }}</v-tab
+          >
+        </v-tabs>
+      </template>
+    </v-app-bar>
+    <v-main v-scroll="onScroll" class="grey lighten-4">
+      <v-row justify="center" align="center">
+        <v-col cols="12">
+          <v-img
+            aspect-ratio="1.7778"
+            src="/images/banner.jpg"
+            style="min-height: calc(100vh - 100px)"
+          >
+          </v-img>
+        </v-col>
+      </v-row>
+
+      <!--Intro Section-->
+      <section :id="introSpec.slug" class="pb-10">
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            class="text-center grey--text text--darken-4 text-h6 px-5"
+          >
+            <div class="py-10"></div>
+            <v-img
+              class="mb-3"
+              :src="introSpec.titleImage"
+              height="50"
+              contain
+            ></v-img>
+            <v-divider class="mb-5" />
+            <nuxt-content :document="sections[introSpec.content]" />
+          </v-col>
+        </v-row>
+      </section>
+
+      <section>
+        <v-card elevation="20">
+          <v-img
+            src="/images/octodoodles/tile_1.jpg"
+            min-height="150px"
+            :position="`-${offsetTop - 400}px 0px`"
+          />
+        </v-card>
+      </section>
+
+      <!--Artists Trust Section-->
+      <section :id="artistsTrustSpec.slug" class="pb-10">
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            class="text-center grey--text text--darken-4 text-body-1 mb-5 px-5"
+          >
+            <div class="py-10"></div>
+            <v-img
+              class="mb-3"
+              :src="artistsTrustSpec.titleImage"
+              height="50"
+              contain
+            ></v-img>
+            <v-divider class="mb-5" />
+            <nuxt-content
+              :document="sections[artistsTrustSpec.content]"
+              class="black--text"
+            />
+          </v-col>
+        </v-row>
+      </section>
+
+      <!--Roadmap Section-->
+      <section :id="roadmapSpec.slug" class="doodle-background pb-10">
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            md="10"
+            class="
+              text-center
+              grey--text
+              text--darken-4 text-body-1
+              mb-5
+              pl-5
+              pr-10
+            "
+          >
+            <div class="py-10"></div>
+            <v-img
+              class="mb-3"
+              :src="roadmapSpec.titleImage"
+              height="50"
+              contain
+            ></v-img>
+            <v-divider class="mb-5" />
+            <Roadmap :roadmap="roadmap" />
+          </v-col>
+        </v-row>
+      </section>
+
+      <section>
+        <v-card elevation="20">
+          <v-img
+            src="/images/octodoodles/tile_2.jpg"
+            min-height="150px"
+            :position="`${offsetTop - 4400}px 0px`"
+          />
+        </v-card>
+      </section>
+
+      <!--Team Section-->
+      <section :id="teamSpec.slug" class="pb-10">
+        <v-row justify="center">
+          <v-col
+            sm="10"
+            md="8"
+            lg="6"
+            class="grey--text text--darken-4 text-body-1 mb-5"
+          >
+            <div class="py-10"></div>
+            <v-img
+              class="mb-3"
+              :src="teamSpec.titleImage"
+              height="50"
+              contain
+            ></v-img>
+            <v-divider class="mb-5" />
+            <Team :members="team" />
+          </v-col>
+        </v-row>
+      </section>
+    </v-main>
+    <v-footer>
+      <span>Made with ❤️ by the Octodoodles Team</span>
+      <v-spacer />
+      <a href="https://www.freepik.com/vectors/cartoon"
+        >Cartoon vector created by rawpixel.com - www.freepik.com</a
+      >
     </v-footer>
   </v-app>
 </template>
@@ -155,10 +220,29 @@ export default {
     return {
       drawer: false,
       isMobile: this.$vuetify.breakpoint.mdAndDown,
-      title: 'Cryptopi Crew',
+      title: 'Octodoodles',
+      offsetTop: 0,
     };
   },
+  methods: {
+    onScroll(e) {
+      console.info(e);
+      this.offsetTop = e.target.scrollingElement.scrollTop;
+    },
+  },
   computed: {
+    introSpec() {
+      return this.menu.find((m) => m.slug === 'intro');
+    },
+    artistsTrustSpec() {
+      return this.menu.find((m) => m.slug === 'artists-trust');
+    },
+    roadmapSpec() {
+      return this.menu.find((m) => m.slug === 'roadmap');
+    },
+    teamSpec() {
+      return this.menu.find((m) => m.slug === 'team');
+    },
     scrollOptions() {
       return {
         duration: 300,
@@ -167,6 +251,12 @@ export default {
       };
     },
   },
-  methods: {},
 };
 </script>
+<style scoped>
+.doodle-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/images/doodle-background.jpg') no-repeat center center fixed !important;
+  background-size: cover;
+}
+</style>

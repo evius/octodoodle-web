@@ -5,7 +5,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
-    title: 'Cryptopi Crew',
+    title: 'Octodoodles',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -13,7 +13,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          "Who doesn't love an Octopus? Join the crew! An NFT collection 9001 Cryptopi on the Ethereum blockchain.",
+          "Who doesn't love an Octopus? Join the crew! An NFT collection of 10000 Octodoodles on the Ethereum blockchain.",
       },
       {
         name: 'keywords',
@@ -96,7 +96,7 @@ export default {
       mobileBreakpoint: 'sm', // This is equivalent to a value of 960
     },
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: '#00BFA5',

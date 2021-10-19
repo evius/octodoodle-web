@@ -4,46 +4,30 @@
     "title": "Introduction",
     "navTitle": "Intro",
     "slug": "intro",
-    "content": "intro"
-  },
-  {
-    "icon": "mdi-information",
-    "title": "About Cryptopi",
-    "navTitle": "About",
-    "slug": "about",
-    "content": "about"
+    "content": "intro",
+    "titleImage": "/images/title-intro.svg",
+    "backgroundImage": "/images/doodle-background.jpg"
   },
   {
     "icon": "mdi-brush",
     "title": "Artists Trust",
     "slug": "artists-trust",
-    "content": "artists-trust"
-  },
-  {
-    "icon": "mdi-wallet-membership",
-    "title": "Member Benefits",
-    "navTitle": "Membership",
-    "slug": "member-benefits",
-    "content": "member-benefits"
-  },
-  {
-    "icon": "mdi-ethereum",
-    "title": "Specification",
-    "navTitle": "Spec",
-    "slug": "specification",
-    "content": "specification"
+    "content": "artists-trust",
+    "titleImage": "/images/title-artists-trust.svg"
   },
   {
     "icon": "mdi-map",
     "title": "Roadmap",
     "slug": "roadmap",
     "content": "roadmap",
-    "component": "Roadmap"
+    "component": "Roadmap",
+    "titleImage": "/images/title-roadmap.svg"
   },
   {
     "icon": "mdi-account-group",
     "title": "Team",
     "slug": "team",
-    "component": "Team"
+    "component": "Team",
+    "titleImage": "/images/title-team.svg"
   }
 ]

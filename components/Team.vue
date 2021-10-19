@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col v-for="(member, i) of members" :key="i">
+    <v-col xs="12" sm="6" v-for="(member, i) of members" :key="i">
       <v-card class="mx-auto" max-width="344">
         <v-img :src="member.image"></v-img>
 
