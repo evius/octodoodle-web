@@ -87,6 +87,12 @@
         </v-row>
       </section>
 
+      <img
+        src="/images/rocket.png"
+        class="rocket"
+        :style="`top: ${2500 - offsetTop}px; right: ${offsetTop - 800}px`"
+      />
+
       <section>
         <v-card elevation="20">
           <v-img
@@ -258,5 +264,12 @@ export default {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('/images/doodle-background.jpg') no-repeat center center fixed !important;
   background-size: cover;
+}
+
+.rocket {
+  width: 75px;
+  position: absolute;
+  right: 20px;
+  z-index: 0;
 }
 </style>
