@@ -1,23 +1,18 @@
 <template>
-  <v-timeline :dense="$vuetify.breakpoint.smAndDown" align-top>
+  <v-timeline :dense="$vuetify.breakpoint.smAndDown" align-bottom>
     <v-timeline-item
       v-for="(item, i) in roadmap"
       :key="i"
       :color="item.color ? item.color : colors[i % colors.length]"
-      fill-dot
       :right="i % 2 === 0"
       :small="i % 2 !== 0"
     >
-      <v-card dark :color="item.color ? item.color : colors[i % colors.length]">
-        <v-card-title
-          :class="item.color ? item.color : colors[i % colors.length]"
-        >
-          <h2 class="text-h6 white--text">
-            {{ item.title }}
-          </h2>
+      <v-card :color="item.color ? item.color : colors[i % colors.length]">
+        <v-card-title class="grey lighten-4">
+          <v-img :alt="item.title" :src="item.image"></v-img>
         </v-card-title>
-        <v-card-text class="pa-0 text-subtitle-1 text--primary">
-          <v-sheet class="pa-3">
+        <v-card-text :class="`pa-0 text-subtitle-1 text--primary transparent`">
+          <v-sheet class="pa-3 transparent">
             <nuxt-content :document="item" />
           </v-sheet>
         </v-card-text>

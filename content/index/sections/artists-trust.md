@@ -17,7 +17,7 @@ In addition we also want to give back and help drive the art community by,
 - Finding diamonds in the rough.
 - Hosting annual art competitions with a great prize.
 - Incubating, funding and mentoring up and coming artists.
-- Helping peoples passions and dreams to com alive.
+- Helping peoples passions and dreams to come alive.
 
 <br>
 To make this possible, we'll be taking 5% of all secondary sales of which 2.5% will be put into an Artist's Trust wallet.

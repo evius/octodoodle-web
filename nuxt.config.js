@@ -13,7 +13,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          "Who doesn't love an Octopus? Join the crew! An NFT collection of 10000 Octodoodles on the Ethereum blockchain.",
+          'Octodoodles is an NFT collection of 10 000 beautiful, fun and artful "doodles" on the Ethereum Blockchain.',
       },
       {
         name: 'keywords',

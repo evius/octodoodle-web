@@ -161,7 +161,7 @@
           <v-img
             src="/images/octodoodles/tile_2.jpg"
             min-height="150px"
-            :position="`${offsetTop - 4400}px 0px`"
+            :position="`${offsetTop - 6000}px 0px`"
           />
         </v-card>
       </section>

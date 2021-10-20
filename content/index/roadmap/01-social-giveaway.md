@@ -1,7 +1,8 @@
 ---
-title: Social Media Giveaway
+title: Sweet Giveaway
 color: cyan lighten-3
 rank: 1
+image: /images/rm-sweet-giveaway.svg
 ---
 
-9 (3 x 3) Cryptopi will be given away when we reach 250, 500 and 750 followers on Twitter and Discord combined. Cryptopi received when the sale starts.
+We have a sweet giveaway when we reach 5000 followers across all Social platforms. It's going to be a surprise but donut worry, we'll be sprinkling some more details soon. Stay tuned to Social Media.
