@@ -90,7 +90,7 @@
       <img
         src="/images/rocket.png"
         class="rocket"
-        :style="`top: ${2500 - offsetTop}px; right: ${offsetTop - 800}px`"
+        :style="`top: ${3000 - offsetTop}px; right: ${offsetTop - 800}px`"
       />
 
       <section>
@@ -109,7 +109,7 @@
           <v-col
             cols="12"
             sm="10"
-            class="text-center grey--text text--darken-4 text-body-1 mb-5 px-5"
+            class="grey--text text--darken-4 text-body-1 mb-5 px-5"
           >
             <div class="py-10"></div>
             <v-img
