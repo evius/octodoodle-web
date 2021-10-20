@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" app temporary>
+    <!-- <v-navigation-drawer v-model="drawer" app temporary>
       <v-list>
         <v-list-item
           v-for="(item, i) in menu"
@@ -17,12 +17,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
-    <v-app-bar fixed app>
-      <v-app-bar-nav-icon
+    </v-navigation-drawer> -->
+    <v-app-bar>
+      <!-- <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
         v-show="$vuetify.breakpoint.mobile"
-      />
+      /> -->
       <v-toolbar-title>
         <v-img src="/images/logo.png" height="50" max-width="210" />
       </v-toolbar-title>
@@ -39,7 +39,7 @@
         <v-icon>mdi-discord</v-icon>
       </v-btn>
       <template v-slot:extension>
-        <v-tabs align-with-title>
+        <v-tabs>
           <v-tab
             v-for="(item, i) in menu"
             :key="i"
@@ -83,11 +83,11 @@
         </v-row>
       </section>
 
-      <img
+      <!-- <img
         src="/images/rocket.png"
         class="rocket"
         :style="`top: ${3000 - offsetTop}px; right: ${offsetTop - 800}px`"
-      />
+      /> -->
 
       <section>
         <v-card elevation="20">
