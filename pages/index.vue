@@ -27,15 +27,11 @@
         <v-img src="/images/logo.png" height="50" max-width="210" />
       </v-toolbar-title>
       <v-spacer />
-      <v-btn icon href="https://twitter.com/CryptopiCrew" target="_blank">
+      <v-btn icon href="https://twitter.com/octo_doodles" target="_blank">
         <v-icon>mdi-twitter</v-icon>
       </v-btn>
 
-      <v-btn
-        icon
-        href="https://www.instagram.com/cryptopicrew/"
-        target="_blank"
-      >
+      <v-btn icon href="https://www.instagram.com/octo.doodle/" target="_blank">
         <v-icon>mdi-instagram</v-icon>
       </v-btn>
 
