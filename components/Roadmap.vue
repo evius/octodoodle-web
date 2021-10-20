@@ -9,11 +9,21 @@
     >
       <v-card :color="item.color ? item.color : colors[i % colors.length]">
         <v-card-title class="grey lighten-4">
-          <v-img :alt="item.title" :src="item.image"></v-img>
+          <v-img
+            :alt="item.title"
+            :src="item.image"
+            max-height="100"
+            contain
+          ></v-img>
         </v-card-title>
         <v-card-text :class="`pa-0 text-subtitle-1 text--primary transparent`">
-          <v-sheet class="pa-3 transparent">
-            <nuxt-content :document="item" />
+          <v-sheet min-height="200" class="pa-3 transparent">
+            <div
+              class="d-flex justify-center align-center"
+              style="height: 100%"
+            >
+              <nuxt-content :document="item" />
+            </div>
           </v-sheet>
         </v-card-text>
       </v-card>
