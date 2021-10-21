@@ -152,16 +152,6 @@
         </v-row>
       </section>
 
-      <section>
-        <v-card elevation="20">
-          <v-img
-            src="/images/octodoodles/tile_2.jpg"
-            min-height="150px"
-            :position="`${offsetTop - 6000}px 0px`"
-          />
-        </v-card>
-      </section>
-
       <!--Team Section-->
       <section :id="teamSpec.slug" class="pb-10">
         <v-row justify="center">
