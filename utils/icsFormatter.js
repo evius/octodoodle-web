@@ -77,8 +77,8 @@ var icsFormatter = function () {
       var start_time = '';
       var end_time = '';
       if (start_minutes + start_seconds + end_minutes + end_seconds !== 0) {
-        start_time = 'T' + start_hours + start_minutes + start_seconds;
-        end_time = 'T' + end_hours + end_minutes + end_seconds;
+        start_time = 'T' + start_hours + start_minutes + start_seconds + 'Z';
+        end_time = 'T' + end_hours + end_minutes + end_seconds + 'Z';
       }
 
       var start = start_year + start_month + start_day + start_time;
@@ -88,8 +88,8 @@ var icsFormatter = function () {
         'BEGIN:VEVENT',
         'CLASS:PUBLIC',
         'DESCRIPTION:' + description,
-        'DTSTART;VALUE=DATE:' + start,
-        'DTEND;VALUE=DATE:' + end,
+        'DTSTART:' + start,
+        'DTEND:' + end,
         'LOCATION:' + location,
         'SUMMARY;LANGUAGE=en-us:' + subject,
         'TRANSP:TRANSPARENT',
