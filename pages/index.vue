@@ -23,7 +23,7 @@
         @click.stop="drawer = !drawer"
         v-show="$vuetify.breakpoint.mobile"
       />
-      <v-toolbar-title>
+      <v-toolbar-title class="pl-0">
         <v-img src="/images/logo.png" height="50" max-width="210" />
       </v-toolbar-title>
       <v-spacer />
