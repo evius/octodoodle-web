@@ -16,6 +16,13 @@
     "titleImage": "/images/title-artists-trust.svg"
   },
   {
+    "icon": "mdi-ethereum",
+    "title": "Mint",
+    "slug": "mint",
+    "component": "SaleState",
+    "titleImage": "/images/title-mint.svg"
+  },
+  {
     "icon": "mdi-map",
     "title": "Roadmap",
     "slug": "roadmap",

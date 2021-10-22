@@ -4,6 +4,7 @@
     <client-only>
       <v-btn v-show="isConnected" @click="connect">Connect</v-btn>
       <div>Status: {{ isConnected ? 'Connected' : 'Disconnected' }}</div>
+      <SaleState />
     </client-only>
   </div>
 </template>
@@ -12,8 +13,13 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Web3 from 'web3';
+import SaleState from '../components/SaleState.vue';
 
-@Component
+@Component({
+  components: {
+    SaleState,
+  },
+})
 export default class MintPage extends Vue {
   web3: Web3 | null = null;
   ethereum: any = null;

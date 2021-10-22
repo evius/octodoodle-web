@@ -1,6 +1,6 @@
 <template>
-  <v-app>
-    <!-- <v-navigation-drawer v-model="drawer" app temporary>
+  <div>
+    <v-navigation-drawer v-model="drawer" app temporary>
       <v-list>
         <v-list-item
           v-for="(item, i) in menu"
@@ -17,12 +17,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer> -->
+    </v-navigation-drawer>
     <v-app-bar>
-      <!-- <v-app-bar-nav-icon
+      <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
         v-show="$vuetify.breakpoint.mobile"
-      /> -->
+      />
       <v-toolbar-title>
         <v-img src="/images/logo.png" height="50" max-width="210" />
       </v-toolbar-title>
@@ -38,7 +38,7 @@
       <v-btn icon href="http://discord.gg/mW6pNkR4zs" target="_blank">
         <v-icon>mdi-discord</v-icon>
       </v-btn>
-      <template v-slot:extension>
+      <template v-slot:extension v-if="!$vuetify.breakpoint.mobile">
         <v-tabs>
           <v-tab
             v-for="(item, i) in menu"
@@ -68,9 +68,9 @@
           <v-col
             cols="12"
             sm="10"
-            class="text-center grey--text text--darken-4 text-h6 px-5"
+            class="text-center grey--text text--darken-4 text-body-1 px-5"
           >
-            <div class="py-10"></div>
+            <div :class="headerPadding"></div>
             <v-img
               class="mb-3"
               :src="introSpec.titleImage"
@@ -78,7 +78,16 @@
               contain
             ></v-img>
             <v-divider class="mb-5" />
-            <nuxt-content :document="sections[introSpec.content]" />
+            <v-row class="mt-2" align="center">
+              <v-col xs="12" sm="12" md="8">
+                <nuxt-content :document="sections[introSpec.content]" />
+              </v-col>
+              <v-col xs="12" sm="12" md="4">
+                <v-card elevation="20" rounded="xl">
+                  <v-img src="/images/octodoodles.gif" />
+                </v-card>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </section>
@@ -89,25 +98,15 @@
         :style="`top: ${3000 - offsetTop}px; right: ${offsetTop - 800}px`"
       /> -->
 
-      <section>
-        <v-card elevation="20">
-          <v-img
-            src="/images/octodoodles/tile_1.jpg"
-            min-height="150px"
-            :position="`-${offsetTop - 400}px 0px`"
-          />
-        </v-card>
-      </section>
-
       <!--Artists Trust Section-->
-      <section :id="artistsTrustSpec.slug" class="pb-10">
+      <section :id="artistsTrustSpec.slug">
         <v-row justify="center">
           <v-col
             cols="12"
             sm="10"
             class="grey--text text--darken-4 text-body-1 mb-5 px-5"
           >
-            <div class="py-10"></div>
+            <div :class="headerPadding"></div>
             <v-img
               class="mb-3"
               :src="artistsTrustSpec.titleImage"
@@ -119,6 +118,37 @@
               :document="sections[artistsTrustSpec.content]"
               class="black--text"
             />
+          </v-col>
+        </v-row>
+      </section>
+
+      <section>
+        <v-card elevation="20">
+          <v-img
+            src="/images/octodoodles/tile_1.jpg"
+            min-height="150px"
+            :position="`-${offsetTop - 1600}px 0px`"
+          />
+        </v-card>
+      </section>
+
+      <!--Mint Section-->
+      <section :id="mintSpec.slug" class="pb-10">
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            class="grey--text text--darken-4 text-body-1 mb-5 px-5"
+          >
+            <div :class="headerPadding"></div>
+            <v-img
+              class="mb-3"
+              :src="mintSpec.titleImage"
+              height="50"
+              contain
+            ></v-img>
+            <v-divider class="mb-5" />
+            <SaleState />
           </v-col>
         </v-row>
       </section>
@@ -139,7 +169,7 @@
               pr-10
             "
           >
-            <div class="py-10"></div>
+            <div :class="headerPadding"></div>
             <v-img
               class="mb-3"
               :src="roadmapSpec.titleImage"
@@ -161,7 +191,7 @@
             lg="6"
             class="grey--text text--darken-4 text-body-1 mb-5"
           >
-            <div class="py-10"></div>
+            <div :class="headerPadding"></div>
             <v-img
               class="mb-3"
               :src="teamSpec.titleImage"
@@ -181,7 +211,7 @@
         >Cartoon vector created by rawpixel.com - www.freepik.com</a
       >
     </v-footer>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -214,6 +244,7 @@ export default {
       isMobile: this.$vuetify.breakpoint.mdAndDown,
       title: 'Octodoodles',
       offsetTop: 0,
+      headerPadding: 'py-5',
     };
   },
   methods: {
@@ -228,6 +259,9 @@ export default {
     },
     artistsTrustSpec() {
       return this.menu.find((m) => m.slug === 'artists-trust');
+    },
+    mintSpec() {
+      return this.menu.find((m) => m.slug === 'mint');
     },
     roadmapSpec() {
       return this.menu.find((m) => m.slug === 'roadmap');

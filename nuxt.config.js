@@ -98,7 +98,7 @@ export default {
     theme: {
       dark: false,
       themes: {
-        dark: {
+        light: {
           primary: '#00BFA5',
           secondary: '#EF5350', // '#E57373',
           accent: '#009688',
