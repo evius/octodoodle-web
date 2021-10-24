@@ -5,4 +5,4 @@ The clever cephalopods have found a way to tap into the undersea cables and dood
 <br />
 Our fate is certain unless you grab these suckers and don't let go. <br />
 <br />
-Octodoodles is an NFT collection of 10 000 beautiful, fun and artful "doodles" on the Ethereum Blockchain.
+Octodoodles is a family created NFT collection of 9001 beautiful, fun and artful "doodles" on the Ethereum Blockchain.
