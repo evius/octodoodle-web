@@ -71,7 +71,7 @@ enum SaleState {
 export default class saleSate extends Vue {
   saleState: SaleState | null = SaleState.Pending;
   SaleState = SaleState;
-  preSaleStartDate = parseISO('2021-10-31T19:00:00');
+  preSaleStartDate = parseISO('2021-11-07T19:00:00');
   now = new Date().getTime();
   countDownTimer: NodeJS.Timer | null = null;
 
