@@ -277,6 +277,39 @@ export default {
       };
     },
   },
+  head() {
+    const title = 'Octodoodles';
+    const description =
+      'Octodoodles is an NFT collection of 9001 beautiful, fun and artful "doodles" on the Ethereum Blockchain.';
+    return {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: description,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'nft nftart art ethereum digitalart cryptoart nftcollector crypto nftcommunity nftartists blockchain openseanft nftdrop cryptoinvester cryptoworld collectibles cryptocurrency nftcollection artwork octopus digital artist nfts digital art erc721 crypto investment art nftartgallery raredigitalart opensea eth',
+        },
+        { hid: 'og:type', name: 'og:type', content: 'article' },
+        { hid: 'og:title', name: 'og:title', content: 'Octodoodles' },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://octodoodles.com/images/banner.jpg',
+        },
+      ],
+    };
+  },
 };
 </script>
 <style scoped>
