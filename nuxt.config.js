@@ -43,7 +43,7 @@ export default {
         href: '/favicon-16x16.png',
       },
       { rel: 'manifest', href: '/site.webmanifest' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
+      { rel: 'shortcut icon', href: '/apple-touch-icon.png' },
     ],
   },
 

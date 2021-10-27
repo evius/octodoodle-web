@@ -18,38 +18,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar>
-      <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
-        v-show="$vuetify.breakpoint.mobile"
-      />
-      <v-toolbar-title class="pl-0">
-        <v-img src="/images/logo.png" height="50" max-width="210" />
-      </v-toolbar-title>
-      <v-spacer />
-      <v-btn icon href="https://twitter.com/octo_doodles" target="_blank">
-        <v-icon>mdi-twitter</v-icon>
-      </v-btn>
-
-      <v-btn icon href="https://www.instagram.com/octo.doodle/" target="_blank">
-        <v-icon>mdi-instagram</v-icon>
-      </v-btn>
-
-      <v-btn icon href="http://discord.gg/mW6pNkR4zs" target="_blank">
-        <v-icon>mdi-discord</v-icon>
-      </v-btn>
-      <template v-slot:extension v-if="!$vuetify.breakpoint.mobile">
-        <v-tabs>
-          <v-tab
-            v-for="(item, i) in menu"
-            :key="i"
-            router
-            @click="$vuetify.goTo(`#${item.slug}`, scrollOptions)"
-            >{{ item.navTitle ? item.navTitle : item.title }}</v-tab
-          >
-        </v-tabs>
-      </template>
-    </v-app-bar>
+    <AppBar
+      :menu="menu"
+      v-on:nav-click="drawer = !drawer"
+      v-on:tab-click="(slug) => $vuetify.goTo(`#${slug}`, scrollOptions)"
+    />
     <v-main v-scroll="onScroll" class="grey lighten-4">
       <v-row justify="center" align="center">
         <v-col cols="12">
@@ -132,8 +105,8 @@
         </v-card>
       </section>
 
-      <!--Mint Section-->
-      <section :id="mintSpec.slug" class="pb-10">
+      <!--Buy Section-->
+      <!-- <section :id="mintSpec.slug" class="pb-10">
         <v-row justify="center">
           <v-col
             cols="12"
@@ -148,10 +121,9 @@
               contain
             ></v-img>
             <v-divider class="mb-5" />
-            <SaleState />
           </v-col>
         </v-row>
-      </section>
+      </section> -->
 
       <!--Roadmap Section-->
       <section :id="roadmapSpec.slug" class="doodle-background pb-10">
@@ -215,6 +187,8 @@
 </template>
 
 <script>
+import { Web3Helper, ContractState } from '../utils/Web3Helper';
+
 const sortRoadMap = (a, b) => {
   if (a.rank > b.rank) {
     return 1;
@@ -249,7 +223,6 @@ export default {
   },
   methods: {
     onScroll(e) {
-      console.info(e);
       this.offsetTop = e.target.scrollingElement.scrollTop;
     },
   },
@@ -276,6 +249,11 @@ export default {
         easing: 'easeInOutCubic',
       };
     },
+  },
+  async mounted() {
+    this.web3 = new Web3Helper();
+
+    this.contractState = await this.web3.getContractState();
   },
   head() {
     const title = 'Octodoodles';

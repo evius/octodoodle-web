@@ -2,35 +2,16 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" md="8" lg="6">
-        <v-card elevation="20" class="text-center pa-5">
-          <div v-if="saleState === SaleState.Pending">
-            <h2>Pre-sale starting on:</h2>
+        <v-card elevation="20" class="text-center">
+          <v-card-title class="primary white--text text-center">
+            <v-container class="pa-0" fluid>
+              <h2 class="text-center">{{ header }}</h2>
+            </v-container>
+          </v-card-title>
+
+          <div v-if="contractState.saleState === SaleState.Pending">
             <h4 class="mb-5">{{ formattedPreSaleStartDate }} UTC</h4>
-            <div class="d-flex justify-center mb-7">
-              <div
-                class="d-flex align-center"
-                v-for="(time, index) in timeLeft"
-                :key="index"
-              >
-                <v-sheet
-                  rounded
-                  elevation="10"
-                  :width="$vuetify.breakpoint.mobile ? 65 : 75"
-                  :class="$vuetify.breakpoint.mobile ? 'pa-1' : 'pa-2'"
-                  color="secondary"
-                >
-                  <h1>
-                    {{ time }}
-                  </h1>
-                </v-sheet>
-                <h1
-                  :class="$vuetify.breakpoint.mobile ? 'mx-1' : 'mx-3'"
-                  v-if="index < timeLeft.length - 1"
-                >
-                  :
-                </h1>
-              </div>
-            </div>
+            <Countdown :countDownDate="preSaleStartDate" />
             <div class="body1 mb-3">
               Jion our Discord server, follow us on social media or add it to
               your calendar to get a reminder.
@@ -48,6 +29,41 @@
               Add to Calendar</v-btn
             >
           </div>
+          <div
+            v-if="
+              contractState.saleState === SaleState.PreSaleOpen ||
+              contractState.saleState === SaleState.SaleOpen
+            "
+          >
+            <v-card-text>
+              <div class="mt-4 text-subtitle-1">Price: {{ price }} ETH</div>
+              <div class="mb-4 text-subtitle-1">
+                Gas Price: {{ gasPrice }} ETH
+              </div>
+
+              <div v-if="isMintPage">
+                You probably know how this works by now but here it is again.
+                After you click on the Mint button your wallet should open and
+                you will need to sign the transaction.
+              </div>
+            </v-card-text>
+            <v-divider class="mx-4 mb-5"></v-divider>
+            <v-container>
+              <v-progress-linear
+                v-model="totalSupply"
+                color="secondary"
+                height="35"
+                rounded
+              >
+                <template v-slot:default="{ value }">
+                  <strong>{{ value }} / {{ currentSupply }}</strong>
+                </template>
+              </v-progress-linear>
+              <div>
+                <slot></slot>
+              </div>
+            </v-container>
+          </div>
         </v-card>
       </v-col>
     </v-row>
@@ -58,45 +74,76 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { parseISO, format } from 'date-fns';
 import icsFormatter from '../utils/icsFormatter';
+import { SaleState, ContractState } from '../utils/Web3Helper';
+import Web3 from 'web3';
 
-enum SaleState {
-  Pending,
-  PreSaleOpen,
-  SaleOpen,
-  Paused,
-  Closed,
-}
+const SaleSateComponentProps = Vue.extend({
+  props: {
+    contractState: Object,
+    isMintPage: Boolean,
+  },
+});
 
 @Component
-export default class saleSate extends Vue {
-  saleState: SaleState | null = SaleState.Pending;
+export default class SaleSateComponent extends SaleSateComponentProps {
   SaleState = SaleState;
   preSaleStartDate = parseISO('2021-11-07T19:00:00');
-  now = new Date().getTime();
-  countDownTimer: NodeJS.Timer | null = null;
 
   get formattedPreSaleStartDate() {
     return format(this.preSaleStartDate, 'dd MMMM yyyy HH:mm');
   }
 
-  get timeLeft() {
-    const countDownDate = this.preSaleStartDate.getTime();
-    const timeLeft = countDownDate - this.now;
-
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    if (timeLeft < 0) {
-      if (this.countDownTimer) {
-        clearInterval(this.countDownTimer);
-      }
+  get header(): string {
+    switch (this.contractState.saleState) {
+      case SaleState.Pending:
+        return 'Pre-sale starting on:';
+      case SaleState.PreSaleOpen:
+        return 'Pre-sale is Open!';
+      case SaleState.SaleOpen:
+        return 'Public sale is Open!';
+      case SaleState.Paused:
+        return 'Sale is paused.';
+      case SaleState.Closed:
+        return "We're Sold Out!";
+      default:
+        return "Hmmm, something's wrong.";
     }
+  }
 
-    return [days, hours, minutes, seconds];
+  get price(): string {
+    switch (this.contractState.saleState) {
+      case SaleState.PreSaleOpen:
+        return Web3.utils.fromWei(this.contractState.preSalePrice).toString();
+      case SaleState.Pending:
+      case SaleState.SaleOpen:
+      case SaleState.Paused:
+      case SaleState.Closed:
+        return Web3.utils.fromWei(this.contractState.salePrice).toString();
+      default:
+        return '0';
+    }
+  }
+
+  get gasPrice(): string {
+    return Web3.utils.fromWei(this.contractState.gasPrice).toString();
+  }
+
+  get totalSupply(): number {
+    return Number(this.contractState.totalSupply.toString());
+  }
+
+  get currentSupply(): string {
+    switch (this.contractState.saleState) {
+      case SaleState.PreSaleOpen:
+        return this.contractState.preSaleSupply;
+      case SaleState.Pending:
+      case SaleState.SaleOpen:
+      case SaleState.Paused:
+      case SaleState.Closed:
+        return this.contractState.maxSupply;
+      default:
+        return '0';
+    }
   }
 
   downloadICS() {
@@ -122,12 +169,6 @@ export default class saleSate extends Vue {
       end.toUTCString()
     );
     calEntry.download('Octodoodle_Presale', 'ics');
-  }
-
-  mounted() {
-    this.countDownTimer = setInterval(() => {
-      this.now = new Date().getTime();
-    }, 1000);
   }
 }
 </script>
