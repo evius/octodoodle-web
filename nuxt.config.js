@@ -13,7 +13,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Octodoodles is an NFT collection of 9001 beautiful, fun and artful "doodles" on the Ethereum Blockchain.',
+          'Octodoodles is an NFT collection of 5000 beautiful, fun and artful "doodles" on the Ethereum Blockchain.',
       },
       {
         name: 'keywords',
