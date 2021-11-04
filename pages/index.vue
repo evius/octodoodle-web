@@ -258,7 +258,7 @@ export default {
   head() {
     const title = 'Octodoodles';
     const description =
-      'Octodoodles is an NFT collection of 9001 beautiful, fun and artful "doodles" on the Ethereum Blockchain.';
+      'Octodoodles is an NFT collection of 5000 beautiful, fun and artful "doodles" on the Ethereum Blockchain.';
     return {
       title,
       meta: [
