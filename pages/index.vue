@@ -53,6 +53,21 @@
           >
         </div>
       </v-row>
+      <v-row class="mt-8" justify="center" align="center">
+        <a href="https://github.com/evius/octodoodle-web" target="_blank"
+          >Website Source Code</a
+        >
+      </v-row>
+      <v-row class="mt-4" justify="center" align="center">
+        <a href="https://github.com/evius/octodoodle-nft" target="_blank"
+          >Smart Contract Source Code</a
+        >
+      </v-row>
+      <v-row class="mt-4" justify="center" align="center">
+        <a href="" target="_blank"
+          >Metadata and image generator (coming soon, need to remove secrets)</a
+        >
+      </v-row>
 
       <!--Buy Section-->
       <!-- <section :id="mintSpec.slug" class="pb-10">
