@@ -21,6 +21,7 @@
     <v-btn icon href="http://discord.gg/mW6pNkR4zs" target="_blank">
       <v-icon>mdi-discord</v-icon>
     </v-btn>
+
     <template v-slot:extension v-if="!$vuetify.breakpoint.mobile || isMintPage">
       <v-tabs v-if="!isMintPage">
         <v-tab

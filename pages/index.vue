@@ -35,6 +35,45 @@
         </v-col>
       </v-row>
 
+      <v-row class="mt-5" justify="center" align="center">
+        <v-btn
+          color="primary"
+          href="https://opensea.io/collection/octodoodles"
+          target="_blank"
+          >View on OpenSea</v-btn
+        >
+      </v-row>
+      <v-row class="mt-8" justify="center" align="center">
+        <div>
+          Smart Contract:
+          <a
+            href="https://polygonscan.com/address/0x2fd7ecb85c2da1834293c62383c76311166a821f"
+            target="_blank"
+            >0x2fd7ecb85c2da1834293c62383c76311166a821f</a
+          >
+        </div>
+      </v-row>
+
+      <!--Buy Section-->
+      <!-- <section :id="mintSpec.slug" class="pb-10">
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            class="grey--text text--darken-4 text-body-1 mb-5 px-5"
+          >
+            <div :class="headerPadding"></div>
+            <v-img
+              class="mb-3"
+              :src="mintSpec.titleImage"
+              height="50"
+              contain
+            ></v-img>
+            <v-divider class="mb-5" />
+          </v-col>
+        </v-row>
+      </section> -->
+
       <!--Intro Section-->
       <section :id="introSpec.slug" class="pb-10">
         <v-row justify="center">
@@ -251,9 +290,8 @@ export default {
     },
   },
   async mounted() {
-    this.web3 = new Web3Helper();
-
-    this.contractState = await this.web3.getContractState();
+    // this.web3 = new Web3Helper();
+    // this.contractState = await this.web3.getContractState();
   },
   head() {
     const title = 'Octodoodles';
