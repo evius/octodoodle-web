@@ -64,8 +64,8 @@
         >
       </v-row>
       <v-row class="mt-4" justify="center" align="center">
-        <a href="" target="_blank"
-          >Metadata and image generator (coming soon, need to remove secrets)</a
+        <a href="https://github.com/evius/octodoodle-metadata" target="_blank"
+          >Metadata and image generator and uploader (to IPFS)</a
         >
       </v-row>
 
