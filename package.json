@@ -19,7 +19,7 @@
     "date-fns": "^2.25.0",
     "nuxt": "^2.15.7",
     "vue-class-component": "^7.2.6",
-    "vuetify": "^2.5.5",
+    "vuetify": "^3.1.8",
     "web3": "^1.6.0"
   },
   "devDependencies": {
